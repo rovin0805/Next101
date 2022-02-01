@@ -16,7 +16,7 @@ export default function NavBar() {
         nav {
           display: flex;
           gap: 10px;
-          flex-direction: column;
+          flex-direction: row;
           align-items: center;
           padding-top: 20px;
           padding-bottom: 10px;
@@ -25,7 +25,7 @@ export default function NavBar() {
         }
         img {
           max-width: 100px;
-          margin-bottom: 5px;
+          margin-right: 20px;
         }
         nav a {
           font-weight: 600;
