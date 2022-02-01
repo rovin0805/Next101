@@ -35,6 +35,10 @@ pages 폴더 안에 있는 파일명에 따라 route가 결정됨.
 ## Routing
 
 'next/link'에 내장된 Link를 사용해 라우팅을 해야 함. (react-router-dom의 Link와 동일한 역할)  
-NexJS 어플리케이션의 클라이언트 사이드 네비게이션을 제공힘
+NexJS 어플리케이션의 클라이언트 사이드 네비게이션을 제공함.
 
 [useRouter Reference](https://nextjs.org/docs/api-reference/next/router)
+
+## App Component
+
+NextJS가 모든 페이지를 렌더링할 수 있게 하는 일종의 어떤 컴포넌트의 청사진.
