@@ -7,10 +7,10 @@ export default function Home({ results }) {
   const onClickMovie = (id, movie) => {
     router.push(
       {
-        pathname: `/movies/${id}`,
+        pathname: `/movies/${movie.original_title}/${id}`,
         query: movie,
       },
-      `/movies/${id}`,
+      `/movies/${movie.original_title}/${id}`,
     );
   };
 
@@ -25,12 +25,12 @@ export default function Home({ results }) {
           <h4>
             <Link
               href={{
-                pathname: `/movies/${movie.id}`,
+                pathname: `/movies/${movie.original_title}/${movie.id}`,
                 query: {
                   title: movie.original_title,
                 },
               }}
-              as={`/movies/${movie.id}`}>
+              as={`/movies/${movie.original_title}/${movie.id}`}>
               <a>{movie.original_title}</a>
             </Link>
           </h4>
