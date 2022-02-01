@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js
 
 ## Getting Started
 
-First, run the development server:
+[NextJs Docs](https://nextjs.org/docs/getting-started)
 
-```bash
-npm run dev
-# or
-yarn dev
+Next.js 프로젝트 초기화
+
+```
+npx create-next-app@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next.js 프로젝트 초기화 (+타입스크립트)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npx create-next-app@latest --typescript
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Pages
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+pages 폴더 안에 있는 파일명에 따라 route가 결정됨.
 
-## Learn More
+> pages/about.js 생성 ->  
+> localhost:3000/about (O)  
+> localhost:3000/about-us(X)
 
-To learn more about Next.js, take a look at the following resources:
+## Static Pre-Rendering
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **create-react-app => client-side rendering** : 초기 빈 HTML을 받고 브라우저가 스크립트를 받아 리액트를 실행시키기까지 기다려야 함.  
+  _The restaurant which starts to make food after receiving an order._
+- **create-next-app => static pre-rendering** : 초기 상태의 컴포넌트로 된 미리 생성 된 HTML 페이지를 보게 됨. 모든 게 다 로딩되면 리액트가 연결됨.  
+  Next does SSR. After the page is rendered, React will take over in the frontend and make everything interactive. (Hydration)  
+   _The restaurant which serves the food immediately since it made the food in advance._
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Routing
 
-## Deploy on Vercel
+'next/link'에 내장된 Link를 사용해 라우팅을 해야 함. (react-router-dom의 Link와 동일한 역할)  
+NexJS 어플리케이션의 클라이언트 사이드 네비게이션을 제공힘
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[useRouter Reference](https://nextjs.org/docs/api-reference/next/router)
